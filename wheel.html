@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title>TransDiesel's Spin to Win!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" property="og:description" content="TransDiesel's Spin to Win!" />
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+
+
+    <!-- css -->
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/fonts/din/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/fonts/solomon/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/images/icons/icomoon/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body id="top">
+
+
+
+
+
+
+
+
+
+<main>
+    <div class="container">
+
+        <div class="slideHolder picturefill-background">
+            <div class="slideContent insetShdw-light">
+                <div>
+                    <div id="copy">
+                        <section>
+                            <h1>Spin To Win</h1> 
+                            <br>
+                            <img src="/images/brands.svg" alt="Yanmar & TransDiesel" class="logoStrip">
+                            <br>
+                        </section>
+                        <section>
+                            <h2>Hi Name. Congratulations on your recent purchase!</h2> 
+                            <p>To show our appreciation we'd like to invite you to take a spin to win on our wheel of fortune to win one of three awesome prizes!</p>                          
+                        </section>
+                        <section>
+                            <p class="terms"><strong>Conditions of entry.</strong> Nulla nibh risus, auctor ac urna vel, condimentum finibus urna. Proin id urna orci. Donec augue arcu, vehicula in turpis non, egestas consequat orci. Cras ornare neque lectus, at faucibus libero imperdiet at. Nulla tortor elit, molestie sit amet libero id, ullamcorper mattis neque. Fusce suscipit justo a est sodales, at venenatis felis sollicitudin. Integer fermentum dui eu nibh congue, eu faucibus nibh aliquam.</p>
+
+                            <br>
+                            
+                            <form class="spacedLR">
+                                <fieldset class="vanilla">
+                                    <div class="labelRight">
+                                        <input type="checkbox" id="acceptTs" class="terms" name="terms" value="1"><label for="acceptTs" >I Accept</label>
+                                    </div>
+                                </fieldset>
+                        
+                                <span class="ctaInActive">Spin the wheel!</span>
+                                <a href="#" class="ctaActive animated infinite pulse doSpin" >Spin the wheel!</a>
+
+                            </form>
+                        </section>
+                    </div>
+
+
+                    
+                    <div>
+                        <div class="theWheelContainer">
+                            <div class="pointer"><img src="/images/pointer@2x.png"></div>
+                            <div class="centerCirc"><img src="/images/center@2x.png"></div>
+                            <canvas id="canvas" width="650" height="650" class="theWheel">
+                                Canvas not supported. Please update your (IE6,7 or 8) web browser.
+                            </canvas>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--
+            <span data-src="/images/scratchMLight/m.jpg" data-media="(min-width: 750px)"></span>
+            <span data-src="/images/scratchMLight/l.jpg" data-media="(min-width: 1200px)"></span>
+            -->
+        </div>
+
+    </div>
+
+    <div class="notMobile">
+        <h1>Sorry.</h1>
+        <p><strong>This app is not available for use on smartphones.</strong>  Please access on a higher screen size device such as a tablet or a computer. Thanks.</p>
+    </div>
+
+</main>
+
+
+
+
+
+<!-- js -->
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/js/picturefill-background.js"></script>
+<script type="text/javascript" src="/js/javascript-winwheel-2.8.0/Winwheel.min.js"></script>
+<script type="text/javascript" src="/js/TweenMax.min.js"></script>
+
+<script>
+    var theName = 'Bob';
+    let theWheel = new Winwheel({
+        'numSegments' : 9,
+        'textAlignment' : 'outer',
+        'textMargin' : 20,
+        'lineWidth'   : 0,
+        'strokeStyle'   : null,
+        'outerRadius' : 306,
+        'centerX'     : 325,
+        'centerY'     : 326,
+        'innerRadius' : 80,
+        'drawMode' : 'segmentImage',
+        'segments'    :
+        [
+        {'image' : '/images/segments/seq1.svg', 'text' : 'Amman Plate\nor Rammer (1)'},
+        {'image' : '/images/segments/seq2.svg', 'text' : '$1000 Parts &\nService Credit (2)'},
+        {'image' : '/images/segments/seq3.svg', 'text' : '$1000 Hydraulic\nHitch Credit (3)'},
+        {'image' : '/images/segments/seq1.svg', 'text' : 'Amman Plate\nor Rammer (4)'},
+        {'image' : '/images/segments/seq2.svg', 'text' : '$1000 Parts &\nService Credit (5)'},
+        {'image' : '/images/segments/seq3.svg', 'text' : '$1000 Hydraulic\nHitch Credit (6)'},
+        {'image' : '/images/segments/seq1.svg', 'text' : 'Amman Plate\nor Rammer (7)'},
+        {'image' : '/images/segments/seq2.svg', 'text' : '$1000 Parts &\nService Credit (8)'},
+        {'image' : '/images/segments/seq3.svg', 'text' : '$1000 Hydraulic\nHitch Credit (9)'}
+        ],
+        'animation' :
+        {
+            'type' : 'spinToStop',
+            'duration' : 5,
+            'spins' : 8,
+            //'callbackSound' : playSound,
+            // After the animation has finished specify callback function.
+            'callbackFinished' : 'alertPrize()'
+        }
+           
+
+        
+    });
+
+    // This function called after the spin animation has stopped.
+    function alertPrize()
+    {
+        // Call getIndicatedSegment() function to return pointer to the segment pointed to on wheel.
+        let winningSegment = theWheel.getIndicatedSegment();
+        // Basic alert of the segment text which is the prize name.
+        alert("Well done " + theName + ". You have won a " + winningSegment.text + "!");
+    }
+
+    let audio = new Audio('tick.mp3');  // Create audio object and load desired file.
+ 
+    function playSound()
+    {
+        // Stop and rewind the sound (stops it if already playing).
+        audio.pause();
+        audio.currentTime = 0;
+
+        // Play the sound.
+        audio.play();
+    }
+
+</script>
+
+<script>
+$(document).ready(function(){
+    $('.ctaActive').hide();
+    $('.terms').click(function(){
+        if($(this).is(":checked")) {
+            $(".ctaInActive").hide();  
+            $(".ctaActive").show();
+        }    
+        else {
+            $(".ctaActive").hide();
+            $(".ctaInActive").show();
+        }
+            
+    });
+
+
+
+    $('a.doSpin').click(function(){
+        theWheel.startAnimation();
+        $(this).fadeOut("slow");
+        return false;
+    });
+
+});
+</script>
+
+</body>
+</html>
+
+
+
+
