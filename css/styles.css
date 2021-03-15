@@ -66,9 +66,9 @@ h5 {
     font-size: 80%;
 }
 .terms {
-    font-size: 0.8em;
+    font-size: 0.9em;
     line-height: 1.4em;
-    color: rgba(20,20,20,0.65);
+    color: rgba(20,20,20,0.75);
 }
 strong {
     font-weight: 800;
@@ -259,8 +259,8 @@ section.login input[type=text] {
     margin-right: 0.1em;
 }
 section.login input[type=submit] {
-    font-size:1.6em;
-    padding:8px 10px;
+    font-size:1.4em;
+    padding:5px 8px;
     text-align: center;
 }
 
