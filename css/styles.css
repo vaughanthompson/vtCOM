@@ -289,9 +289,10 @@ section.login input[type=submit] {
 
 div.pointer {
     position: absolute;
-    width:50px;
+    width:30px;
     left:50%;
-    margin-left: -25px;
+    margin-left: -15px;
+    top:-20px;
 }
 
 div.centerCirc {
