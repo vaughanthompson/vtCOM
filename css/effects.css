@@ -1,0 +1,138 @@
+﻿/* css transforms */
+body {
+    --rotate-init: rotateX(45deg) rotateY(0deg) rotateZ(45deg);
+    --rotate-init-L: rotateX(-45deg) rotateY(0deg) rotateZ(-45deg);
+    --z-init: translateZ(0px);
+    --z-hover: translateZ(20px);
+}
+
+/* button icon animation */
+.button, .button i, a i.round, nav a, ul.deliverables a i {
+    transform: translateX(0px) translateY(0px) translateZ(0px);
+    transition: all 0.25s ease-in-out;
+}
+
+
+/* screen shot art direction */
+.animated-screencaps {
+    overflow: hidden;
+    position:relative;
+}
+.animated-screencaps section *:not(.screencap-scene) {
+    z-index: 1;
+    position: relative;
+}
+
+
+.screencap-scene {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transform-style:preserve-3d;
+}
+.screencap-setup {
+    position: absolute !important;
+    box-shadow: 20px 20px 10px rgba(10,10,10,0.7);
+    transition: all 0.7s ease-in-out;
+    transform-origin: center center;
+    transform: var(--rotate-init) translateZ(0px) translateX(40%) translateY(0);
+    opacity: 0.03;
+}
+
+.screencap-scene .on {
+    border-color: rgba(255,255,255,0.8);
+    opacity: 0.6;
+}
+.screencap-scene .on:hover {
+    opacity: 1.0;
+}
+
+
+img.phone {
+    width: 25%;
+}
+
+img.tablet {
+    width: 75%;
+}
+
+img.desktop {
+    width: 90%;
+}
+
+
+
+
+
+.ipos-i1 {
+    transform: var(--rotate-init) var(--z-init) translateX(-98%) translateY(-25%);
+}
+.ipos-i2 {
+    transform: var(--rotate-init) var(--z-init) translateX(-100%) translateY(-95%);
+}
+.ipos-i3 {
+    transform: var(--rotate-init) var(--z-init) translateX(-100%) translateY(53%);
+}
+.ipos-i4 {
+    transform: var(--rotate-init) var(--z-init) translateX(52%) translateY(-10%);
+}
+.ipos-i5 {
+    transform: var(--rotate-init) var(--z-init) translateX(-84%) translateY(96%);
+}
+.ipos-i6 {
+    transform: var(--rotate-init) var(--z-init) translateX(20%) translateY(175%);
+}
+
+.move-i1 {
+    transform: var(--rotate-init) var(--z-init) translateX(-98%) translateY(-10%);
+}
+.move-i2 {
+    transform: var(--rotate-init) var(--z-init) translateX(-100%) translateY(-75%);
+}
+.move-i3 {
+    transform: var(--rotate-init) var(--z-init) translateX(-100%) translateY(33%);
+}
+.move-i4 {
+    transform: var(--rotate-init) var(--z-init) translateX(42%) translateY(-10%);
+}
+.move-i5 {
+    transform: var(--rotate-init) var(--z-init) translateX(-64%) translateY(96%);
+}
+.move-i6 {
+    transform: var(--rotate-init) var(--z-init) translateX(20%) translateY(145%);
+}
+
+.move-i1:hover {
+    transform: var(--rotate-init) var(--z-hover) translateX(-98%) translateY(-10%);
+}
+.move-i2:hover {
+    transform: var(--rotate-init) var(--z-hover) translateX(-100%) translateY(-75%);
+}
+.move-i3:hover {
+    transform: var(--rotate-init) var(--z-hover) translateX(-100%) translateY(33%);
+}
+.move-i4:hover {
+    transform: var(--rotate-init) var(--z-hover) translateX(42%) translateY(-10%);
+}
+.move-i5:hover {
+    transform: var(--rotate-init) var(--z-hover) translateX(-64%) translateY(96%);
+}
+.move-i6:hover {
+    transform: var(--rotate-init) var(--z-hover) translateX(20%) translateY(145%);
+}
+
+/* touch adjustments */
+@media (-moz-touch-enabled: 1), (any-pointer: coarse), (max-width:1000px) {
+
+}
+
+
+
+/* for non css var support*/
+@supports not (--a: 0) {
+
+}
