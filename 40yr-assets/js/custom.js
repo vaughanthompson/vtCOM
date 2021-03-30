@@ -367,7 +367,8 @@
             $('.year').removeClass('animated fadeIn'); 
             $('.feat1').removeClass('animated fadeIn rollIn rotateInDownRight'); 
             $('.feat2').removeClass('animated fadeIn rollIn rotateInDownRight'); 
-            $('.feat3').removeClass('animated fadeIn rollIn'); 
+            $('.feat3').removeClass('animated fadeIn rollIn rotateInDownRight'); 
+            $('.feat4').removeClass('animated fadeIn rollIn rotateInDownRight bounceIn'); 
         }
     });
 
