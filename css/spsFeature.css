@@ -1,0 +1,716 @@
+﻿body {
+    background-color: rgba(26,26,26,1.0);
+    background-image: url(/40yr-assets/bgs/pprDark/l.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgba(255,255,255,0.9);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "sf";
+    font-weight: 300;
+    font-size: 16px;
+}
+
+footer {
+    background-color: rgba(0,0,0,0.5);
+    background-image: url(/40yr-assets/bgs/pprDark/l.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top:1px solid rgba(255,255,255,0.2);
+}
+
+
+
+
+/* typography*/
+
+a:link, a:visited {
+    color: rgba(255,255,255,0.6);
+}
+a:hover, a:active {
+    color: rgba(255,255,255,1.0);
+}
+
+p,
+p a, 
+li a {
+    line-height:1.8em;
+}
+ul, ul li {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    padding:0;
+    margin:0;
+    color: rgba(255,255,255,0.95);
+}
+.rev h1,
+.rev h2,
+.rev h3,
+.rev h4,
+.rev h5,
+.rev h6,
+.rev {
+    color: rgba(26,26,26,1.0);
+}
+
+h4 {
+    font-size: 1em;
+    line-height: 2.0em;
+    font-weight: 500;
+}
+h5 {
+    font-size: 0.9em;
+    line-height: 2.0em;
+    text-transform: uppercase;
+}
+.small {
+    font-size: 80%;
+}
+.big {
+    font-size: 7.5em;
+    letter-spacing: -0.05em;
+    padding-right: .2em;
+}
+.Helv {
+    font-family: 'HelvObl';
+}
+.Bebas {
+    font-family: 'BebasN';
+}
+.white {
+    color: rgba(255,255,255,0.8) !important;
+}
+.black {
+    color: rgba(0,0,0,0.9) !important;
+}
+
+
+/* iconography */
+.iconCTA svg {
+    width:100%;
+    height:100%;
+}
+.iconCTA svg path {
+    fill:rgba(255,255,255,0.9);
+}
+.iconCTA svg circle {
+    fill: none;
+    stroke:rgba(255,255,255,0.9);
+}
+.iconCTA.light svg path {
+    fill:rgba(0,0,0,0.9);
+}
+.iconCTA.light svg circle {
+    fill: none;
+    stroke:rgba(0,0,0,0.9);
+}
+
+a.iconCTA {
+    display: inline-block;
+}
+a.iconCTA.compact {
+    width:30px;
+    height:30px;
+}
+a.iconCTA:hover svg path {
+    fill: rgba(237,27,36,1.0);
+}
+a.iconCTA:hover svg circle {
+    stroke: rgba(237,27,36,1.0);
+}
+a.iconCTA.compact.in-page {
+    margin:0px auto;
+    display: block;
+    width:25px;
+    height: 25px;
+    opacity:1.0;
+}
+a.iconCTA.compact.in-page.light {
+    opacity:1.0;
+}
+a.iconCTA.compact.in-page:hover {
+    opacity:1.0;
+}
+
+div.nextArrow {
+    position: relative;
+    margin:0px auto;
+    width: 32px;
+}
+div.nextArrow a {
+    position: absolute;
+    bottom: 15vh;
+}
+
+div.nextArrow.higher a {
+    bottom: 30vh;
+}
+
+
+
+
+
+
+/* layout */
+/* layout */
+/* layout */
+/* layout */
+
+div.fixedUI {
+    position:fixed;
+    width:100%;
+}
+div.fixedUI div#strip {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height:100px;
+}
+div.logoChanger {
+    width: 230px;
+    height: 80px;
+    display: flex;
+    padding-left:2vw;
+    position: relative;
+    align-items: flex-end;
+}
+div.logoChanger img {
+    width: 230px;
+    height: auto;
+    display: block;
+    position: absolute;
+    padding: 10px 10px;
+    /*box-shadow: 0px 0px 15px #000;*/
+}
+
+div#strip nav a {
+    margin-right:1.5vw;
+    transition: 1s;
+}
+div#strip nav a.syncUpRight {
+    margin-right:60px;
+    transition: 1s;
+}
+
+
+
+
+/* cutaway image handling */
+div.cutawayImgs {
+    position: absolute;
+    width:100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: flex-end;
+    bottom:0;
+}
+div.cutawayImgs > div {
+    flex-basis: 1 1 auto;
+}
+div.cutawayImgs > div img {
+    width:100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+/* footer default */
+footer section {
+    margin-bottom: 2em;
+}
+footer > div {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer img {
+    width:95%;
+    height: auto;
+}
+footer img.brandID {
+    width:80%;
+}
+
+
+
+/* effects */
+.insetShdw-light {
+    box-shadow: inset 0px 20px 30px rgba(0,0,0,0.1);
+}
+.insetShdw-dark {
+    box-shadow: inset 0px 20px 30px rgba(0,0,0,0.8);
+}
+.offset-paper {
+    top:-20px; 
+    width: 100%; 
+    height: auto; 
+    position: absolute;
+    opacity:0.98;
+}
+
+/* force hide */
+@media screen and (max-width: 750px) {
+    .mHide  {
+        display: none !important;
+    }
+}  
+
+@media screen and (min-width: 1100px) {
+    .dHide  {
+        display: none !important;
+    }
+}  
+
+
+
+/* z-indexes */
+div.cutawayImgs {
+    z-index: 1000;
+}
+div.slideContent {
+    z-index:5000;
+}
+.offset-paper {
+    z-index:10000;
+}
+div.nextArrow {
+    z-index:20000;
+}
+div.fixedUI {
+    z-index:30000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* nodeNav */
+div#fixedRight {
+    width:80px;
+    height:67vh;
+    right:40px;
+    top:20vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+div#nodeNav {
+    width:80px;
+    height:55vh;
+    background-image: url(/40yr-assets/imgs/rev/navline.svg);
+    background-repeat: no-repeat;
+    background-position-x: 65px;
+    background-position-y: 10px;
+    background-size: 2px 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+div#nodeNav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0;
+    margin: 0;
+    line-height: 100%;
+    text-decoration: none;
+    transition: 1s;
+    color: #ffffff;
+    font-family: 'BebasN';
+}
+div#nodeNav a div.node {
+    height: 27px;
+}
+div#nodeNav a:hover div.label,
+div#nodeNav div.label.activeLabel {
+    color: rgba(237,27,36,1.0);
+    transition: 0.5s;
+}
+div#nodeNav div.label {
+    text-align: right;
+    flex:1 1 auto;
+    padding-top: 2px;
+    padding-right: 5px;
+}
+
+
+div.node svg g.holder circle {
+    transition: 500ms;
+    fill: rgba(0,0,0,0.8);
+    stroke: rgba(255,255,255,1.0);
+    opacity: 1.0;
+}
+div.node svg g.activeNode > circle {
+    fill: rgba(237,27,36,1.0);
+}
+div.node svg g.activeNode g.fadeLoop1 circle {
+    stroke: rgba(237,27,36,1.0);
+    opacity:0.75;
+}
+div.node svg g.activeNode g.fadeLoop2 circle {
+    stroke: rgba(237,27,36,1.0);
+    opacity:0.5;
+}
+
+div.node g.activeNode.inactive {
+    opacity:0;
+}
+
+div#nodeNav.revNav a {
+    transition: 1s;
+    color: rgba(26,26,26,1.0);
+}
+div#nodeNav.revNav div.node svg g.holder circle {
+    transition: 500ms;
+    fill: rgba(255,255,255,1.0);
+    stroke: rgba(0,0,0,0.8);
+    opacity: 1.0;
+}
+div#nodeNav.revNav {
+    background-image: url(/40yr-assets/imgs/navline.svg); 
+}
+
+div#yearID {
+    width:4vw;
+    height:4vw;
+}
+
+div#yearID > img {
+    width:100%;
+    height: 100%;
+}
+
+div#yearID > img.reversed {
+    opacity: 0;
+}
+
+
+
+
+
+/* layout */
+
+/* default padding */
+div.slideContent > div {
+    padding: 6vw 0 1vw 0;
+    display: flex;
+}
+footer > div {
+    padding: 5vw 15vw 2.5vw 5vw;
+    display: flex;
+}
+
+div.fullheight {
+    padding:0 !important;
+    height: 110vh !important;
+}
+
+
+
+
+@media screen and (max-width: 750px) {
+    footer > div {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    footer > div section {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    div.slideHolder,
+    div.slideContent {
+        position: relative;
+        height:110vh;
+    }
+    div.slideHolder.extend,
+    div.slideContent.extend {
+        position: relative;
+        height:125vh;
+    }
+    footer > div section {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (min-width:1100px) {
+    div.slideHolder,
+    div.slideContent {
+        position: relative;
+        height:110vh;
+    }
+    div.slideHolder.extend,
+    div.slideContent.extend {
+        position: relative;
+        height:125vh;
+    }
+    div.slideContent > div {
+        height:80vh;
+    }
+
+}
+
+@media screen and (min-width: 2000px) {
+}  
+
+
+
+/* content */
+ul.slideItems h2 {
+    font-family: 'BebasN';
+    line-height: 1.2em;
+    font-size:1.7em;
+}
+ul.slideItems h3 {
+    font-family: 'HelvObl';
+    line-height: 1.2em;
+    font-size:1.3em;
+    text-transform: uppercase;
+    padding-right: 0vw;
+    margin-bottom: 0.35em;
+    margin-top: 0.2em;
+}
+ul.slideItems p {
+    margin-top: 0.15em;
+    margin-bottom: 0;
+    line-height: 1.25em;
+}
+ul.slideItems {
+    margin-top: 3vh;
+}
+ul.slideItems li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align:left ;
+}
+ul.slideItems li div:first-child {
+    flex-basis: 15%;
+}
+ul.slideItems li div:last-child {
+    border-top: 1px solid rgba(255,255,255,0.9);
+    padding-right: 1vw;
+}
+ul.slideItems li div {
+    flex-basis: 90%;
+    padding: 1.1em 0 1.2em 0;
+}
+div.rev ul.slideItems li div:last-child {
+    border-top: 1px solid rgba(26,26,26,1.0);
+}
+
+div.slideContent article img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+div.slideContent > div > article.singleCol {
+    margin:0px auto;
+    width:50vw;
+    display: flex;
+    align-items: center;
+}
+div.slideContent > div > article.singleCol > section,
+div.slideContent > div > article.singleCol > section > div {
+    flex-basis: 100%;
+    text-align: center;
+}
+div.slideContent > div > article.doubleCol {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width:100%;
+}
+div.slideContent > div > article.flip {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+div.slideContent > div > article.vertical {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    width:100%;
+}
+div.slideContent > div > article.doubleCol > section {
+    flex-basis: 33vw;
+}
+div.slideContent > div > article.doubleCol > section:last-child {
+    flex-basis: 44vw;
+}
+div.slideContent > div > article.flip > section:last-child {
+    flex-basis: 50vw;
+}
+
+div.slideContent > div > article.vertical > section:last-child {
+    flex-basis: 50vw;
+}
+
+div.slideContent section.listContent {
+    padding: 2vh 5vw 2vh 8vw;
+}
+div.slideContent article.flip section.listContent {
+    padding: 2vh 5vw 2vh 2vw;
+}
+
+
+section.artwork {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+section.artwork > * {
+    position: absolute;
+    padding: 1vw;
+}
+
+div.insetContent {
+    padding: 5vw;
+}
+
+div.slideContent > div > article.vertical section.artwork {
+    min-height: 1%;
+}
+div.slideContent > div > article.vertical section.listContent {
+    width:33vw;
+    padding: 2vh 5vw;
+}
+
+
+@media screen and (max-width: 750px) {
+  
+}
+
+@media screen and (max-width: 1100px) {
+}
+
+@media screen and (min-width:1100px) {
+}
+
+@media screen and (min-width: 2000px) {
+}  
+
+
+
+
+
+
+
+/* photo / polaroid styles */
+.bgPic {
+    opacity: 0.4;
+    background-color: rgba(0,0,0,0.90);
+    background-blend-mode: hard-light;
+}
+.bgPicSoftLight {
+    opacity: 0.8;
+    background-color: rgba(200,200,200,0.05);
+    background-blend-mode: soft-light;
+}
+.sold {
+    width:15vw !important;
+    height: 15vw;
+    border-radius:0vw;
+    background-size: cover;
+    top: 50vh; 
+}
+.paper {
+    width:18vw !important;
+    height: 25vw;
+    border-radius:0vw;
+    box-shadow: 0 0 40px rgba(0,0,0,1.0);
+    background-size: cover;
+    top: 50vh; 
+}
+.vintage {
+    width:22vw !important;
+    height: 22vw;
+    border-radius:4vw;
+    box-shadow: 0 0 40px rgba(0,0,0,1.0);
+    background-size: cover;
+    top: 50vh; 
+}
+.land1 {
+    width:25vw !important;
+    height: 17vw;
+    border-radius:0.5vw;
+    box-shadow: 0 0 40px rgba(0,0,0,1.0);
+    background-size: cover;
+    top: 50vh; 
+}
+.land2 {
+    width:30vw !important;
+    height: 20vw;
+    border-radius:0vw;
+    box-shadow: 0 0 40px rgba(0,0,0,1.0);
+    background-size: cover;
+    top: 50vh; 
+}
+.revBoxShdw {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.rotate5 {
+    transform: rotate(5deg);
+}
+.rotate10 {
+    transform: rotate(10deg);
+}
+.rotate15 {
+    transform: rotate(15deg);
+}
+.rotateMin5 {
+    transform: rotate(-5deg);
+}
+.rotateMin10 {
+    transform: rotate(-10deg);
+}
+.rotateMin15 {
+    transform: rotate(-15deg);
+}
+.delay1 {
+    animation-delay: 1s;
+}
+.delay2 {
+    animation-delay: 2s;
+}
+.delay3 {
+    animation-delay: 3s;
+}
+.delay4 {
+    animation-delay: 4s;
+}
+.delay5 {
+    animation-delay: 5s;
+}
+.start0 {
+    opacity: 0.0;
+}

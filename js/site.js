@@ -1,7 +1,4 @@
 ﻿$(document).ready(function(){
-
-
-
     $.localScroll({
             target: 'body',
             queue: false,
@@ -10,78 +7,165 @@
             easing: 'easeOutQuad'
     });
 
-    // mobile top scroll
-    $('#navMobile').hide();
-    new Waypoint({
-    element: document.getElementsByTagName('body'),
-    handler: function(direction) {
-        if (direction === 'down') {
-            $('#navMobile').fadeTo(1000,'1.0');
-        }
-        else {
-            $('#navMobile').hide();
-        }
-    },
-        offset: '-50%'
-    })    
+    //$('#inpageTabs').localScroll({
+    //    offset: {top:-100}
+    //});
 
 
-    // home slider
-    $(".owl-theme-slider").owlCarousel({
+    $(".owl-carousel-slider").owlCarousel({
         items:1,
         margin:0,
         rewind:true,
-        animateIn:'fadeIn',
-        animateOut:'fadeOut',
         loop:true,
         autoplay:true,
-        autoplayTimeout:10000,
+        autoplayTimeout:7000,
         autoplayHoverPause:true,
         touchDrag:true,
         mouseDrag:true,
-        stopOnHover:true,
+        stopOnHover:false,
         dots:true,
-        dotsContainer:'#cI-hook',
         nav:true,
-        navText: ["<span class='icon-arrow-left-outline'></span>","<span class='icon-arrow-right-outline'></span>"],
-        autoplaySpeed:5000,
+        navText: ["<span class='icon-arrow-back'></span>","<span class='icon-arrow-forward'></span>"],
+        autoplaySpeed:2000,
         smartSpeed:1000,
         fluidSpeed:1
     });
 
-    // minimal slider
-    $(".owl-theme-slider1").owlCarousel({
-        items:1,
-        margin:0,
+/* move the following into model page itself 
+
+    $(".owl-carousel").owlCarousel({
+        items:2,
+        margin:10,
         rewind:true,
-        animateIn:'fadeIn',
-        animateOut:'fadeOut',
-        loop:true,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:false,
+        loop:false,
+        autoplay:false,
+        autoplayTimeout:6000,
+        autoplayHoverPause:true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
         touchDrag:true,
         mouseDrag:true,
-        stopOnHover:true,
+        stopOnHover:false,
         dots:false,
-        dotsContainer:'#cI-hook',
-        nav:false,
-        //navText: ["<span class='icon-arrow-left-outline'></span>","<span class='icon-arrow-right-outline'></span>"],
-        autoplaySpeed:5000,
-        smartSpeed:1000,
-        fluidSpeed:1
+        nav:true,
+        navText: ["<span class='icon-arrow-back'></span>","<span class='icon-arrow-forward'></span>"],
+        autoplaySpeed:6000,
+        smartSpeed:250,
+        fluidSpeed:1,
+        responsive: {
+            0 : {
+                items : 2,
+                margin : 5,
+                slideBy: 2                
+            },
+            // breakpoint from 480 up
+            500 : {
+                items : 3,
+                margin : 10,
+                slideBy: 3 
+            },
+            // breakpoint from 768 up
+            1000 : {
+                items : 5,
+                margin : 20,
+                slideBy: 5
+            },
+            // breakpoint from 768 up
+            1300 : {
+                items : 7,
+                margin : 30,
+                slideBy: 7
+            }
+        }
     });
 
 
-    // mobile nav
+*/
+
+
+
+    $('#toTop').css('opacity','0.0');
+    new Waypoint({
+    element: document.getElementsByTagName('main'),
+    handler: function(direction) {
+        if (direction === 'down') {
+            $('#toTop').fadeTo(1000,'1.0');
+        }
+        else {
+            $('#toTop').fadeTo(1000,'0.0');
+        }
+    },
+        offset: '-150%'
+    })
+
+    $('#showLocs').click(function(){
+        $('div.availsWrapper').fadeIn(500);
+        return false;
+    }); 
+    $('#closeLocs').click(function(){
+        $('div.availsWrapper').slideUp(500);
+        return false;
+    });
+
+    $('div.enquiry a.ctaButton.sales').click(function(){
+        $('div.enquiry div.content').fadeIn(500); 
+        $('div.enquiry div.control a').removeClass("activeLink");         
+        $(this).addClass("activeLink");         
+        return false;
+    });
+    $('div.enquiry a.ctaButton.parts').click(function(){
+        $('div.enquiry div.content').fadeIn(500);   
+        $('div.enquiry div.control a').removeClass("activeLink");         
+        $(this).addClass("activeLink");         
+        return false;
+    });
+    $('div.enquiry a.closeEnq').click(function(){
+        $('div.enquiry div.content').slideUp(500);   
+        $('div.enquiry div.control a').removeClass("activeLink");         
+        return false;
+    });
+
+    // show hide with trigger outside
+    $('a.enquiryTrigOne').click(function(){
+        $('div.enquiryOne div.content').fadeIn(500); 
+        $(this).addClass("activeLink");         
+        return false;
+    });
+    $('div.enquiryOne a.closeEnq').click(function(){
+        $('div.enquiryOne div.content').slideUp(500);   
+        $('a.enquiryTrigOne').removeClass("activeLink");         
+        return false;
+    });
+    $('a.enquiryTrigTwo').click(function(){
+        $('div.enquiryTwo div.content').fadeIn(500); 
+        $(this).addClass("activeLink");         
+        return false;
+    });
+    $('div.enquiryTwo a.closeEnq').click(function(){
+        $('div.enquiryTwo div.content').slideUp(500);   
+        $('a.enquiryTrigTwo').removeClass("activeLink");         
+        return false;
+    });
+
+
+
+
+    // Mobile Navigation
     $('#navClose').hide();
+
+
     $('#navClose').click(function(){
         $(this).hide();
         $('#navCart').show();
         $('#navTrigger').show();
         $("div.mblnavContainer").scrollTo(0);
-        $('div.mblnav').hide();
+        $('nav.mblnav').hide();
         $('html, body').removeClass('noscroll');
+       
+            //    scrollTop: 0 
+        //$("div.mblnavContainer").animate({ 
+        //    scrollTop: 0 
+        //}, "slow");
         return false;
     });
 
@@ -89,122 +173,45 @@
         $(this).hide();
         $('#navCart').hide();
         $('#navClose').show();
-        $('div.mblnav').show();
+        $('nav.mblnav').show();
         $('html, body').addClass('noscroll');
         return false;
 
     });
 
+    $('.hamburger__container').click(function() {
+       // $('.nav').toggleClass('open');
+        //$(this).children().first().toggleClass('open');
+        //$('html, body').toggleClass('noscroll');
+    });
 
-    // slideNav
-    $('#omniDrop').click(function(){
-        //$(this).hide();
-        $(this).siblings('a').toggleClass('faded');
-        $(this).find('i').toggleClass('rotateIC');
-        $('#slideNav').slideToggle();
+
+    // Slide Drawer mobile model content
+    /*
+    $('.mobTabCtrl').click(function() {
+        $('.tabContent > article, .tabContent > div').hide();
+        $(this).siblings('.tabContent > article, .tabContent > div').slideDown(500);
+        //$('html, body').animate({scrollTop: $('#tabContent-4').offset().top -100 }, 'slow');
+        $('html, body').animate({scrollTop: $(this).offset().top -200 }, 'fast');
         return false;
-
-    });
-
-
+     });
+     */
 
 
-    // show random div
-    var elems = $(".randomShow");
-    if (elems.length) {
-    var keep = Math.floor(Math.random() * elems.length);
-    for (var i = 0; i < elems.length; ++i) {
-        if (i !== keep) {
-        $(elems[i]).hide();
-        }
-    }
-    }
-
-
-
-    // named anchor scrollTo and offset
-    var anchorLink = $(window.location.hash);
-    if ( anchorLink.length ) {
-        $("html, body").animate({scrollTop: anchorLink.offset().top - 50 }, 500);
-    }
+     $('.mobTabCtrl').click(function() {
+        //$('.tabContent > article, .tabContent > div').hide();
+        $(this).siblings('.tabContent > article, .tabContent > div').slideToggle(500);
+        $('html, body').animate({scrollTop: $(this).offset().top -200 }, 'slow');
+        return false;
+     });
 
 
 
 
-    // onOff waypoints content area
-    $('.onOff').each(function() {
-        var inview = new Waypoint.Inview({
-        element: this,
-        enter: function(direction) {
-            // alert('Enter triggered with direction ' + direction)
-            },
-            entered: function(direction) {     
-                $(this[0,'element']).find('.onOffTarget').removeClass('stateInactive');                            
-                $(this[0,'element']).find('.onOffTarget').addClass('stateActive');
-                    
-            },
-            exit: function(direction) {
-                $(this[0,'element']).find('.onOffTarget').removeClass('stateActive');                            
-                $(this[0,'element']).find('.onOffTarget').addClass('stateInactive');
-            },
-            exited: function(direction) {
-                // alert('Exited triggered with direction ' + direction)
-            }
-        })
-    });
-
-
-});
+    /*moved the enquire stuff.*/
 
 
 
+    
 
-/* OLD SITE JS
-
-mapboxgl.accessToken = 'pk.eyJ1IjoidmF1Z2hhbnRob21wc29uIiwiYSI6ImNpbHNtaG5iMTAwMWd1c2tzNW51bzZtMWkifQ.zc3CupdubTgYUxdPJgexKg';
-        
-$(document).ready(function(){
-                // theme switcher
-                var themeOverride = 'no'
-                var d = new Date();
-                
-                var dy = d.getYear();
-                var dm = d.getMonth();
-                var dd = d.getDate();
-                var gt = d.getTime();
-                    
-                var dDayStart = new Date(d.getFullYear(),d.getMonth(),d.getDate(),07,00,0,0);
-                var dDayEnd = new Date(d.getFullYear(),d.getMonth(),d.getDate(),17,30,0,0);
-          
-                if (d.getTime() >= dDayStart.getTime() && d.getTime() < dDayEnd.getTime() && themeOverride == 'no')
-                {
-                    //day
-                    $('body').addClass('dayTheme');
-                    //document.documentElement.style.setProperty('--testNight', '#1a1a1a');
-                    //document.documentElement.style.setProperty('--colorGradient', '255,255,255');
-                    var map = new mapboxgl.Map({
-                                container: 'map',
-                                style: 'mapbox://styles/vaughanthompson/cjh2jzpau1kd32rn0liaw1cxn',
-                                center: [9.233464, 46.845305],
-                                pitch: 60,
-                                bearing: -23,
-                                zoom: 13.15
-                    });   
-                } else {
-                    //night
-                    $('body').addClass('nightTheme');
-                    //document.documentElement.style.setProperty('--testNight', '#ffffff');
-                    //document.documentElement.style.setProperty('--colorGradient', '26,26,26');
-                    var map = new mapboxgl.Map({
-                                container: 'map',
-                                style: 'mapbox://styles/vaughanthompson/cjiup2xa70rfp2rqroaxba1vm',
-                                center: [9.233464, 46.845305],
-                                pitch: 60,
-                                bearing: -23,
-                                zoom: 13.15
-                    });  
-                }
-            
-});
-
-*/
+}); 
