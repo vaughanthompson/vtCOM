@@ -555,7 +555,7 @@
             //anims           
             $('#s11').find('.year').addClass('animated fadeIn');
             $('#s11').find('.feat2').addClass('animated fadeIn');
-            $('#s11').find('.feat3').addClass('animated rotateInDownRight');            
+            $('#s11').find('.feat3').addClass('animated fadeIn');            
         },
         offset: 100
     });

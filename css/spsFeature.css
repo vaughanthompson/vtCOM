@@ -675,6 +675,12 @@ div.slideContent > div > article.vertical section.listContent {
     background-size: cover;
     top: 50vh; 
 }
+.land2ClrCut {
+    width:36vw !important;
+    height: 23vw;
+    background-size: cover;
+    top: 50vh; 
+}
 .revBoxShdw {
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
