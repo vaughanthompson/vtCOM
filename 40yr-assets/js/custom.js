@@ -481,6 +481,7 @@
             $('#s6').find('.year').addClass('animated fadeIn');
             $('#s6').find('.feat1').addClass('animated rotateInDownRight');
             $('#s6').find('.feat2').addClass('animated fadeIn');
+            $('#s6').find('.feat3').addClass('animated fadeIn');
         },
         offset: 100
     });
