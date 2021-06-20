@@ -2,6 +2,26 @@
 * elements 
 */
 
+
+// animation
+$keyframes-name = color-animation
+@keyframes {$keyframes-name}
+    0% {
+        background-color: rgba(0,0,0,0.97);
+    }
+    50% {
+        background-color: rgba(0,0,0,0.8);
+    }
+    100% {
+        background-color: rgba(0,0,0,0.97);
+    }
+
+body
+  background-color: rgba(0,0,0,0.97)
+  animation: color-animation 30s infinite linear alternate
+
+
+
 //logo
 div.logo
     display:flex

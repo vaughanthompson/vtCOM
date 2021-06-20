@@ -2,3 +2,49 @@
 
 main 
    padding:  padL
+
+main#holding
+   padding: padL
+   height: "calc(100vh - %s * 2)" % padL
+
+main#holding > div
+   width: 100%
+   height: 100%
+   display: flex
+   flex-direction: column
+   align-items: center
+   justify-content: flex-start
+   background-image: url(/images/v-mark.svg)
+   background-repeat: no-repeat
+   background-position: center 
+   background-size: auto 90%
+   @media mtrigger
+      justify-content: center
+      background-size: auto 40%
+      background-position: center
+
+main#holding > div > div
+   flex: 1 1 auto
+   display: flex
+   flex-direction: column
+   justify-content: center
+   align-items: center
+   margin: 2vh auto 3vh auto
+   @media mtrigger
+      flex: 0 1 auto
+      min-height: 45vh
+
+
+main#holding > div div#countup1
+   align-self: center
+   margin-top: 2vh
+   margin-bottom: 2.25vh
+   background-color: whiteAlp10
+   @media mtrigger
+      text-align: center
+
+div#countup1 span.seconds
+   min-width: 160px;
+   text-align: left 
+   display: inline-block
+

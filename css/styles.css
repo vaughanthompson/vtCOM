@@ -103,7 +103,7 @@ body {
   }
 }
 body {
-  background-color: #f5f5f5;
+  background-color: rgba(0,0,0,0.85);
   color: #0a0a0a;
 }
 hr {
@@ -119,6 +119,97 @@ input {
 }
 main {
   padding: 5vw;
+}
+main#holding {
+  padding: 5vw;
+  height: calc(100vh - 5vw * 2);
+}
+main#holding > div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -o-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  background-image: url("/images/v-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 90%;
+}
+@media screen and (max-width: 1100px) {
+  main#holding > div {
+    -webkit-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-size: auto 40%;
+    background-position: center;
+  }
+}
+main#holding > div > div {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -o-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 2vh auto 3vh auto;
+}
+@media screen and (max-width: 1100px) {
+  main#holding > div > div {
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    min-height: 45vh;
+  }
+}
+main#holding > div div#countup1 {
+  -webkit-align-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-item-align: center;
+  margin-top: 2vh;
+  margin-bottom: 2.25vh;
+  background-color: rgba(255,255,255,0.1);
+}
+@media screen and (max-width: 1100px) {
+  main#holding > div div#countup1 {
+    text-align: center;
+  }
+}
+div#countup1 span.seconds {
+  min-width: 160px;
+  text-align: left;
+  display: inline-block;
 }
 /* 
 * typography 
@@ -196,7 +287,7 @@ h3,
 .h3,
 h5,
 .h5 {
-  font-weight: 800;
+  font-weight: 900;
 }
 h4,
 .h4,
@@ -204,156 +295,49 @@ h6,
 .h6 {
   font-weight: 600;
 }
-@media screen and (max-width: 750px) {
-  p,
-  li,
-  a,
-  td {
-    font-size: 1rem;
-  }
-  h1,
-  .h1,
-  h2,
-  .h2 {
-    font-size: 1.6rem;
-  }
-  h3,
-  .h3 {
-    font-size: 1.3rem;
-  }
-  h4,
-  .h4 {
-    font-size: 1.2rem;
-  }
-  h5,
-  .h5 {
-    font-size: 1.1rem;
-  }
-  h6,
-  .h6 {
-    font-size: 1rem;
-  }
-  .huge {
-    font-size: 2.4rem;
-  }
+main#holding h1 {
+  font-size: 1.5em;
 }
-@media screen and (min-width: 750px) and (max-width: 1100px) {
-  p,
-  li,
-  a,
-  td {
-    font-size: 1rem;
-  }
-  h1,
-  .h1 {
-    font-size: 2.6rem;
-  }
-  h2,
-  .h2 {
-    font-size: 2.2rem;
-  }
-  h3,
-  .h3 {
-    font-size: 1.6rem;
-  }
-  h4,
-  .h4 {
-    font-size: 1.3rem;
-  }
-  h5,
-  .h5 {
-    font-size: 1.2rem;
-  }
-  h6,
-  .h6 {
-    font-size: 1.15rem;
-  }
-  .huge {
-    font-size: 4rem;
-  }
+main#holding h2 {
+  font-size: 1.1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0;
 }
-@media screen and (min-width: 1100px) and (max-width: 1500px) {
-  p,
-  li,
-  a,
-  td {
-    font-size: 1rem;
-  }
-  h1,
-  .h1 {
-    font-size: 3.4rem;
-    line-height: 100%;
-  }
-  h2,
-  .h2 {
-    font-size: 2.4rem;
-  }
-  h3,
-  .h3 {
-    font-size: 1.6rem;
-  }
-  h4,
-  .h4 {
-    font-size: 1.3rem;
-  }
-  h5,
-  .h5 {
-    font-size: 1.2rem;
-  }
-  h6,
-  .h6 {
-    font-size: 1.1rem;
-  }
-  .huge {
-    font-size: 5rem;
-  }
+main#holding h3 {
+  font-size: 0.8em;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0;
 }
-@media screen and (min-width: 1500px) {
-  p,
-  li,
-  a,
-  td {
-    font-size: 1rem;
-  }
-  h1,
-  .h1 {
-    font-size: 3.8rem;
-    line-height: 95%;
-  }
-  h2,
-  .h2 {
-    font-size: 2.8rem;
-  }
-  h3,
-  .h3 {
-    font-size: 1.8rem;
-  }
-  h4,
-  .h4 {
-    font-size: 1.35rem;
-  }
-  h5,
-  .h5 {
-    font-size: 1.25rem;
-  }
-  h6,
-  .h6 {
-    font-size: 1.1rem;
-  }
-  .huge {
-    font-size: 6rem;
-  }
+span.timeel {
+  color: rgba(255,255,255,0.2);
+  font-weight: 900;
+  font-size: 7em;
+  line-height: 100%;
 }
 /* 
 * elements 
 */
+body {
+  background-color: rgba(0,0,0,0.97);
+  -webkit-animation: color-animation 30s infinite linear alternate;
+  animation: color-animation 30s infinite linear alternate;
+}
 div.logo {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: box;
   display: flex;
+  -webkit-box-pack: center;
   -o-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   -o-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
   width: 40vw;
@@ -429,7 +413,8 @@ div#vidHolder {
 video.hidden-xs {
   width: 100vw;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (max-width: 1100px) {
   video.hidden-xs {
@@ -465,6 +450,7 @@ div.vidCover.light {
   background-color: rgba(255,255,255,0.5);
 }
 div.vidCover.gradient {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(43,193,246,0.7)), color-stop(rgba(43,193,226,0.4)), color-stop(rgba(250,0,205,0.5)), to(rgba(255,0,205,0.8)));
   background: linear-gradient(to left, rgba(43,193,246,0.7), rgba(43,193,226,0.4), rgba(250,0,205,0.5), rgba(255,0,205,0.8));
 }
 ul,
@@ -488,6 +474,28 @@ nav ul {
 }
 footer nav li {
   padding: 1em 0;
+}
+@-webkit-keyframes color-animation {
+  0% {
+    background-color: rgba(0,0,0,0.97);
+  }
+  50% {
+    background-color: rgba(0,0,0,0.8);
+  }
+  100% {
+    background-color: rgba(0,0,0,0.97);
+  }
+}
+@keyframes color-animation {
+  0% {
+    background-color: rgba(0,0,0,0.97);
+  }
+  50% {
+    background-color: rgba(0,0,0,0.8);
+  }
+  100% {
+    background-color: rgba(0,0,0,0.97);
+  }
 }
 .content hr {
   border-bottom: 2px solid #0a0a0a;
@@ -514,14 +522,17 @@ footer nav li {
 .lighten1 {
   background-color: rgba(255,255,255,0.8);
   background-blend-mode: overlay;
-  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
 }
 .lighten2 {
   background-color: rgba(255,255,255,0.85);
   background-blend-mode: overlay;
-  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
 }
 .gradient > div.scontain {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(43,193,246,0.3)), color-stop(rgba(43,193,226,0.1)), color-stop(rgba(250,0,205,0.2)), to(rgba(255,0,205,0.4)));
   background: linear-gradient(to left, rgba(43,193,246,0.3), rgba(43,193,226,0.1), rgba(250,0,205,0.2), rgba(255,0,205,0.4));
   background-blend-mode: multiply;
 }
